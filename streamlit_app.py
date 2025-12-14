@@ -13,7 +13,7 @@ if st.button("Match"):
         st.warning("Please upload both Job Description and CV files.")
     else:
         # Send files to n8n webhook
-        webhook_url = "https://j9paiujb01dnjqblzkxd9wc5.hooks.n8n.cloud/webhook/simple-test"  # replace with your webhook URL
+        webhook_url = "https://j9paiujb01dnjqblzkxd9wc5.hooks.n8n.cloud/webhook/0f152550-ac57-4497-aab2-2f4f253dfaba"  # replace with your webhook URL
         files = {
             "job_file": (job_file.name, job_file.getvalue(), "application/pdf"),
             "cv_file": (cv_file.name, cv_file.getvalue(), "application/pdf")
