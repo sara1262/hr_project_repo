@@ -28,14 +28,38 @@ if st.button("Match"):
 
                 st.success("Matching complete!")
 
-                # ✅ Extract the actual result text
-                match_text = result_json[0].get("result", "No result returned.")
+                # ✅ Extract first object from response array
+                result = result_json[0]
 
-                # ✅ Pretty display
-                st.subheader("Matching Result")
-                st.markdown(match_text)
+                # ---- UI DISPLAY ----
 
-                # Optional: raw JSON for debugging
+                st.subheader("Candidate Evaluation")
+
+                # Match score
+                st.metric("Match Score", f"{result.get('match_score', 'N/A')} / 10")
+
+                # Summary
+                st.write("### Summary")
+                st.write(result.get("summary", "No summary available."))
+
+                # Matching reason
+                st.write("### Matching Reason")
+                st.write(result.get("matching_reason", "No reason provided."))
+
+                # Key skills
+                st.write("### Key Skills")
+                skills = result.get("key_skills", [])
+                if skills:
+                    for skill in skills:
+                        st.markdown(f"- {skill}")
+                else:
+                    st.write("No skills listed.")
+
+                # Recommendation
+                st.write("### Recommendation")
+                st.success(result.get("recommendation", "No recommendation provided."))
+
+                # Raw JSON (debug)
                 with st.expander("Show raw JSON response"):
                     st.json(result_json)
 
