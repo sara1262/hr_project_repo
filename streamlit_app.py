@@ -59,9 +59,6 @@ if st.button("Match"):
                 st.write("### Recommendation")
                 st.success(result.get("recommendation", "No recommendation provided."))
 
-                # Raw JSON (debug)
-                with st.expander("Show raw JSON response"):
-                    st.json(result_json)
 
             except requests.exceptions.RequestException as e:
                 st.error(f"Error communicating with n8n: {e}")
