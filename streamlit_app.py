@@ -13,7 +13,7 @@ if st.button("Match"):
     if not job_file or not cv_file:
         st.warning("Please upload both Job Description and CV files.")
     else:
-        webhook_url = "https://discreditable-northeastwardly-stanford.ngrok-free.dev/webhook-test/0f152550-ac57-4497-aab2-2f4f253dfaba""
+        webhook_url = "https://discreditable-northeastwardly-stanford.ngrok-free.dev/webhook-test/0f152550-ac57-4497-aab2-2f4f253dfaba"
 
         files = {
             "job_file": (job_file.name, job_file.getvalue(), "application/pdf"),
