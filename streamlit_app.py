@@ -34,7 +34,7 @@ if st.button("Match"):
                 st.subheader("Candidate Evaluation")
                 st.write(result_json[0]["result"])
                 # ---- UI DISPLAY ----
-
+'''
                 st.subheader("Candidate Evaluation")
 
                 # Match score
@@ -60,6 +60,7 @@ if st.button("Match"):
                 # Recommendation
                 st.write("### Recommendation")
                 st.success(result.get("recommendation", "No recommendation provided."))
+                '''
 
 
             except requests.exceptions.RequestException as e:
