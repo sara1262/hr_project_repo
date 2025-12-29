@@ -26,6 +26,8 @@ if st.button("Match"):
                 response.raise_for_status()
                 result_json = response.json()
 
+                st.write("🔍 Raw response from n8n:")
+                st.write(result_json)
                 st.success("Matching complete!")
 
                 # ✅ Extract first object from response array
