@@ -33,8 +33,10 @@ if st.button("Match"):
                 # ✅ Extract first object from response array
                 st.subheader("Candidate Evaluation")
                 st.write(result_json[0]["result"])
+            except requests.exceptions.RequestException as e:
+                st.error(f"Error communicating with n8n: {e}")
                 # ---- UI DISPLAY ----
-'''
+                '''
                 st.subheader("Candidate Evaluation")
 
                 # Match score
@@ -63,5 +65,4 @@ if st.button("Match"):
                 '''
 
 
-            except requests.exceptions.RequestException as e:
-                st.error(f"Error communicating with n8n: {e}")
+          
