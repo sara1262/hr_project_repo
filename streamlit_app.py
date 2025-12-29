@@ -26,13 +26,13 @@ if st.button("Match"):
                 response.raise_for_status()
                 result_json = response.json()
 
-                st.write("🔍 Raw response from n8n:")
+                #st.write("🔍 Raw response from n8n:")
                 #st.write(result_json)
                 st.success("Matching complete!")
 
                 # ✅ Extract first object from response array
                 st.subheader("Candidate Evaluation")
-                st.write(result_json["result"])
+                st.write(result_json[0]["result"])
                 # ---- UI DISPLAY ----
 
                 st.subheader("Candidate Evaluation")
