@@ -31,8 +31,9 @@ if st.button("Match"):
                 st.success("Matching complete!")
 
                 # ✅ Extract first object from response array
-                result = result_json[0]
-                st.write(result)
+                st.subheader("Candidate Evaluation")
+                result_text = result_json.get("result", "No result returned.")
+                st.write(result_text))
 
                 # ---- UI DISPLAY ----
 
